@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "scripts": []
           },
@@ -125,5 +126,27 @@
         }
       }
     }},
-  "defaultProject": "poc-drag-and-drop"
+  "defaultProject": "poc-drag-and-drop",
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "spec": false
+      },
+      "service": {
+        "spec": false
+      },
+      "pipe": {
+        "spec": false
+      },
+      "class": {
+        "spec": false
+      },
+      "module": {
+        "spec": false
+      },
+      "guard": {
+        "spec": false
+      }
+    }
+  }
 }

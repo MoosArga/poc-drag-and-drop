@@ -2,7 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'crs' },
+  {
+    path: 'crs',
+    loadChildren: () => import('./feature/crs/crs.module').then(m => m.CrsModule)
+  },
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

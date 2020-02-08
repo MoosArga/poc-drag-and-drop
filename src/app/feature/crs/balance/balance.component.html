@@ -1,0 +1,20 @@
+<div class="crs-balance" *ngIf="balanceItems$ | async; let balanceItems">
+  <ng-container *ngIf="balanceItems.items.length; else nothingToCompare">
+    <div class="crs-balance-action">
+      <i class="fas fa-trash" (click)="clearComparator()"></i>
+    </div>
+    <table class="crs-balance-list">
+      <tr>
+        <td *ngFor="let i of balanceItems.items">{{ i.name }}</td>
+      </tr>
+      <tr>
+        <td *ngFor="let i of balanceItems.items">{{ i.flowRate }}</td>
+      </tr>
+    </table>
+  </ng-container>
+  <ng-template #nothingToCompare>
+    <div class="crs-balance-empty">
+      Il n'y a rien à comparer. Circulez !
+    </div>
+  </ng-template>
+</div>

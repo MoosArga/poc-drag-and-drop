@@ -1,1 +1,132 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.crs {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.crs-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-right: 2px solid black;
+}
+
+.crs-menu-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+  [class*="fas"] {
+    font-size: 36px;
+  }
+  & + & {
+    margin-top: 40px;
+  }
+  &.is-active, &:hover {
+    color: #FF7200;
+    border-color: #FF7200;
+  }
+}
+
+.crs-content {
+  padding: 40px;
+}
+
+.crs-acces, .crs-vpls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50vw;
+  padding: 5px;
+  border: 1px solid black;
+  > * {
+    flex: 0 0 25%;
+  }
+}
+
+.crs-menu-balance {
+  position: relative;
+  .cdk-drag {
+    display: none;
+  }
+}
+
+.crs-menu-balance-counter {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #FF7200;
+}
+
+.crs-icon-balance [class*="fas"] {
+  display: none;
+}
+
+.crs-draggable-proposal {
+  .crs-icon-balance [class*="fas"] {
+    display: initial;
+  }
+}
+
+.crs-not-draggable {
+  .crs-acces, .crs-vpls {
+    &, &:hover {
+      .crs-icon-balance [class*="fas"] {
+        display: none;
+      }
+    }
+  }
+}
+
+.crs-acces:hover, .crs-vpls:hover {
+  .crs-icon-balance [class*="fas"] {
+    display: initial;
+  }
+}
+
+.crs-already-dragged {
+  .crs-acces, .crs-vpls {
+    border-left: 5px solid black;
+  }
+}
+
+.crs-balance {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  > * + * {
+    margin-top:px;
+  }
+}
+
+.crs-visualisation-title {
+  margin: 20px 0;
+}
+
+.crs-balance-action {
+  cursor: pointer;
+  font-size: 24px;
+  color: #FF7200;
+  padding: 10px;
+}
+
+.crs-balance-list {
+  table-layout: fixed;
+  border-collapse: collapse;
+  * {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+  }
+
+}
