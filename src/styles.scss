@@ -74,7 +74,7 @@
 
 .crs-draggable-proposal {
   .crs-icon-balance [class*="fas"] {
-    display: initial;
+    display: inline-block;
   }
 }
 
@@ -90,7 +90,7 @@
 
 .crs-acces:hover, .crs-vpls:hover {
   .crs-icon-balance [class*="fas"] {
-    display: initial;
+    display: inline-block;
   }
 }
 
