@@ -1,0 +1,66 @@
+{
+  "acces": [
+    {
+      "name": "A1",
+      "flowRate": "10mo",
+      "gesteas": "CEORT21"
+    },
+    {
+      "name": "A2",
+      "flowRate": "5mo",
+      "gesteas": "CEORT21"
+    },
+    {
+      "name": "A3",
+      "flowRate": "5mo",
+      "gesteas": "CEORT22"
+    },
+    {
+      "name": "A4",
+      "flowRate": "100mo",
+      "gesteas": "CEORT22"
+    }
+  ],
+  "vpls": [
+    {
+      "name": "V1",
+      "flowRate": "300mo",
+      "livraisons": [
+        "NMLYO212",
+        "NMLYO222"
+      ]
+    },
+    {
+      "name": "V2",
+      "flowRate": "1000mo",
+      "livraisons": [
+        "NMLYO212",
+        "NMLYO222"
+      ]
+    },
+    {
+      "name": "V3",
+      "flowRate": "1000mo",
+      "livraisons": [
+        "NMLYO213",
+        "NMLYO223"
+      ]
+    },
+    {
+      "name": "V4",
+      "flowRate": "10mo",
+      "livraisons": [
+        "NMLYO213",
+        "NMLYO223"
+      ]
+    },
+    {
+      "name": "V5",
+      "flowRate": "10000mo",
+      "livraisons": [
+        "NMLYO215",
+        "NMLYO225"
+      ]
+    }
+  ]
+}
