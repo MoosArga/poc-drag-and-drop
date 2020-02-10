@@ -123,9 +123,14 @@
               "devServerTarget": "poc-drag-and-drop:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "poc-drag-and-drop",
   "schematics": {
     "@schematics/angular": {

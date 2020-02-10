@@ -1,7 +1,11 @@
 <div class="crs-visualisation" *ngIf="crsWrapper$ | async; let crsWrapper">
   <ng-container *ngIf="balanceItems$ | async; let balanceItems;">
-    <h2 class="crs-visualisation-title">Accès</h2>
+    <h2 class="crs-visualisation-title" (click)="toggleAccessVisibility()">
+      Accès
+      <i class="fas fa-caret-{{ isAccessVisible ? 'up' : 'down' }}"></i>
+    </h2>
     <div class="crs-visualisation-acces"
+      *ngIf="isAccessVisible"
       cdkDropList id="accesList"
       [cdkDropListData]="crsWrapper.acces"
       [cdkDropListDisabled]="isDragAccessDisabled(balanceItems.type)"
@@ -10,8 +14,12 @@
       <app-crs-acces [class.crs-already-dragged]="isAlreadyDragged(balanceItems, a)" [cdkDragDisabled]="isAlreadyDragged(balanceItems, a)"
         *ngFor="let a of crsWrapper.acces" [acces]="a" cdkDrag></app-crs-acces>
     </div>
-    <h2 class="crs-visualisation-title">Vpls</h2>
+    <h2 class="crs-visualisation-title" (click)="toggleVplsVisibility()">
+      Vpls
+      <i class="fas fa-caret-{{ isVplsVisible ? 'up' : 'down' }}"></i>
+    </h2>
     <div class="crs-visualisation-vpls"
+      *ngIf="isVplsVisible"
       cdkDropList id="vplsList"
       [cdkDropListData]="crsWrapper.vpls"
       [cdkDropListDisabled]="isDragVplsDisabled(balanceItems.type)"

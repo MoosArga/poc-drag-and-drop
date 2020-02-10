@@ -11,6 +11,6 @@ export class CrsService {
   constructor(private http: HttpClient) { }
 
   findAllCrs(): Observable<CrsWrapper> {
-    return this.http.get<CrsWrapper>('/assets/data/crs.json');
+    return this.http.get<CrsWrapper>('assets/data/crs.json');
   }
 }

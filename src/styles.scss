@@ -80,9 +80,10 @@
 
 .crs-not-draggable {
   .crs-acces, .crs-vpls {
-    &, &:hover {
+    &:hover {
       .crs-icon-balance [class*="fas"] {
-        display: none;
+        display: inline-block;
+        color: #cccccc;
       }
     }
   }
@@ -98,6 +99,9 @@
   .crs-acces, .crs-vpls {
     border-left: 5px solid black;
   }
+  .crs-icon-balance {
+    color: #FF7200;
+  }
 }
 
 .crs-balance {
@@ -111,6 +115,7 @@
 
 .crs-visualisation-title {
   margin: 20px 0;
+  cursor: pointer;
 }
 
 .crs-balance-action {

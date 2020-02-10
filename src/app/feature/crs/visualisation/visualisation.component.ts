@@ -15,6 +15,8 @@ export class VisualisationComponent implements OnInit {
 
   crsWrapper$: Observable<CrsWrapper>;
   balanceItems$: Observable<BalanceItems>;
+  isAccessVisible = true;
+  isVplsVisible = true;
 
   constructor(private crsService: CrsService, private crsBalanceStore: CrsBalanceStore) { }
 
@@ -33,6 +35,14 @@ export class VisualisationComponent implements OnInit {
 
   isAlreadyDragged(balanceItems: BalanceItems, item: CrsEquipment): boolean {
     return !!balanceItems.items.filter(i => i.name === item.name).length;
+  }
+
+  toggleAccessVisibility() {
+    this.isAccessVisible = !this.isAccessVisible;
+  }
+
+  toggleVplsVisibility() {
+    this.isVplsVisible = !this.isVplsVisible;
   }
 
 }
