@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { CrsEquipment } from '../model/interface/crs-equipment';
-import { TypeCrsEquipment } from '../enum/type-crs-equipment.enum';
-import { distinctUntilChanged } from 'rxjs/operators';
+import { TypeEquipment } from '../enum/type-equipment.enum';
 import { BalanceItems } from '../model/balance-items';
+import { CrsEquipment } from '../model/interface/crs-equipment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +17,10 @@ export class CrsBalanceStore {
     return this.balanceItems$.asObservable();
   }
 
-  pushValue(crs: CrsEquipment, type: TypeCrsEquipment): void {
+  pushValue(crs: CrsEquipment, type: TypeEquipment): void {
     const currentValue = this.balanceItems$.value;
     currentValue.items = [...currentValue.items, crs];
-    currentValue.type = type;
+    currentValue.subType = type;
     this.balanceItems$.next(currentValue);
   }
 

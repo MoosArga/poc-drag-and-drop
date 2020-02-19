@@ -1,4 +1,4 @@
-export enum TypeCrsEquipment {
+export enum TypeEquipment {
 
   ACCES = 'ACCES',
   VPLS = 'VPLS'

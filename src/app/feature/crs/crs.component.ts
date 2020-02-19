@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CrsBalanceStore } from 'src/app/shared/store/crs-balance.store';
 import { Observable } from 'rxjs';
 import { CrsEquipment } from 'src/app/shared/model/interface/crs-equipment';
-import { TypeCrsEquipment } from 'src/app/shared/enum/type-crs-equipment.enum';
+import { TypeEquipment } from 'src/app/shared/enum/type-equipment.enum';
 import { BalanceItems } from 'src/app/shared/model/balance-items';
 
 @Component({
@@ -32,12 +32,12 @@ export class CrsComponent implements OnInit {
     this.crsBalanceStore.pushValue(event.previousContainer.data[event.previousIndex], this.getTypeFromId(event.previousContainer.id));
   }
 
-  private getTypeFromId(id: string): TypeCrsEquipment {
+  private getTypeFromId(id: string): TypeEquipment {
     let result = null;
     if (id === 'vplsList') {
-      result = TypeCrsEquipment.VPLS;
+      result = TypeEquipment.VPLS;
     } else if (id === 'accesList') {
-      result = TypeCrsEquipment.ACCES;
+      result = TypeEquipment.ACCES;
     }
     return result;
   }

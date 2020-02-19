@@ -8,8 +8,8 @@
       *ngIf="isAccessVisible"
       cdkDropList id="accesList"
       [cdkDropListData]="crsWrapper.acces"
-      [cdkDropListDisabled]="isDragAccessDisabled(balanceItems.type)"
-      [ngClass]="{'crs-not-draggable': isDragAccessDisabled(balanceItems.type), 'crs-draggable-proposal': isDragVplsDisabled(balanceItems.type) }"
+      [cdkDropListDisabled]="isDragDisabled(typeEquipment.ACCES, balanceItems)"
+      [ngClass]="{'crs-not-draggable': isDragDisabled(typeEquipment.ACCES, balanceItems), 'crs-draggable-proposal': isDragDisabled(typeEquipment.VPLS, balanceItems) }"
       cdkDropListConnectedTo="balanceList">
       <app-crs-acces [class.crs-already-dragged]="isAlreadyDragged(balanceItems, a)" [cdkDragDisabled]="isAlreadyDragged(balanceItems, a)"
         *ngFor="let a of crsWrapper.acces" [acces]="a" cdkDrag></app-crs-acces>
@@ -22,8 +22,8 @@
       *ngIf="isVplsVisible"
       cdkDropList id="vplsList"
       [cdkDropListData]="crsWrapper.vpls"
-      [cdkDropListDisabled]="isDragVplsDisabled(balanceItems.type)"
-      [ngClass]="{'crs-not-draggable': isDragVplsDisabled(balanceItems.type), 'crs-draggable-proposal': isDragAccessDisabled(balanceItems.type) }"
+      [cdkDropListDisabled]="isDragDisabled(typeEquipment.VPLS, balanceItems)"
+      [ngClass]="{'crs-not-draggable': isDragDisabled(typeEquipment.VPLS, balanceItems), 'crs-draggable-proposal': isDragDisabled(typeEquipment.ACCES, balanceItems) }"
       cdkDropListConnectedTo="balanceList">
       <app-crs-vpls [class.crs-already-dragged]="isAlreadyDragged(balanceItems, v)" [cdkDragDisabled]="isAlreadyDragged(balanceItems, v)"
         *ngFor="let v of crsWrapper.vpls" [vpls]="v" cdkDrag></app-crs-vpls>
